@@ -20,7 +20,7 @@
   更新此库
 
   ```bash
-  git submodule update src/Euclid_Warehouse
+  git submodule update --remote src/Euclid_Warehouse
   ```
 
 - 版本管理
