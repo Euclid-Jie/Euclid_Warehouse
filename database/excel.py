@@ -76,10 +76,13 @@ class CsvClient(EuclidCsvTools):
         :param subFolder:
         :param FileName:
         """
-        if ~FileName.endswith(".csv") and "." not in FileName:
-            FileName = FileName + ".csv"
+        if FileName.endswith(".csv"):
+            pass
         else:
-            raise ValueError("FileName must end with .csv or not contain '.'")
+            if "." not in FileName:
+                FileName = FileName + ".csv"
+            else:
+                raise ValueError("FileName must end with .csv or not contain '.'")
         super().__init__(subFolder=subFolder, FileName=FileName)
 
     def insert_one(self, data: Union[dict, pd.DataFrame]):
